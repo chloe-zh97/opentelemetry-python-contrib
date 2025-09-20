@@ -78,8 +78,8 @@ def trace_integration(
     capture_parameters: bool = False,
     enable_commenter: bool = False,
     db_api_integration_factory: type[DatabaseApiIntegration] | None = None,
-    commenter_options: dict[str, Any] | None = None,
     enable_attribute_commenter: bool = False,
+    commenter_options: dict[str, Any] | None = None,
 ):
     """Integrate with DB API library.
     https://www.python.org/dev/peps/pep-0249/
@@ -97,8 +97,8 @@ def trace_integration(
         enable_commenter: Flag to enable/disable sqlcommenter.
         db_api_integration_factory: The `DatabaseApiIntegration` to use. If none is passed the
             default one is used.
-        commenter_options: Configurations for tags to be appended at the sql query.
         enable_attribute_commenter: Flag to enable/disable sqlcomment inclusion in `db.statement` span attribute. Only available if enable_commenter=True.
+        commenter_options: Configurations for tags to be appended at the sql query.
     """
     wrap_connect(
         __name__,
@@ -111,8 +111,8 @@ def trace_integration(
         capture_parameters=capture_parameters,
         enable_commenter=enable_commenter,
         db_api_integration_factory=db_api_integration_factory,
-        commenter_options=commenter_options,
         enable_attribute_commenter=enable_attribute_commenter,
+        commenter_options=commenter_options,
     )
 
 
